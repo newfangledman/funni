@@ -1,0 +1,19 @@
+{
+  "name": "funni",
+  "version": "1.0.0",
+  "description": "map of fun things to do in Northern Ireland",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/newfangledman/funni.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/newfangledman/funni/issues"
+  },
+  "homepage": "https://github.com/newfangledman/funni#readme"
+}
