@@ -4,6 +4,7 @@
     "description": "map of fun things to do in Northern Ireland",
     "main": "index.js",
     "scripts": {
+        "parse": "node src/js/utils/csv.js",
         "dev": "webpack --watch",
         "build": "webpack --config webpack.config.js",
         "test": "echo \"Error: no test specified\" && exit 1"
