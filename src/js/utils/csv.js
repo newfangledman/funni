@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const dataRoot = path.join(__dirname, '@data');
+const dataRoot = path.join(__dirname, '../../../data');
 const inputPath = path.join(dataRoot, 'dataset.csv');
 
 function csvToJSON(csv) {
@@ -15,7 +15,7 @@ function csvToJSON(csv) {
         obj['id'] = pos + 1;
         const currentline = line.split(',');
         headers.forEach(function(header, i) {
-            obj[String.toLowerCase(header)] = currentline[i];
+            obj[header.toLowerCase()] = currentline[i];
         });
         result.places.push(obj);
     });
@@ -24,8 +24,6 @@ function csvToJSON(csv) {
 
 function writeJSON(json) {
     const jsonContent = JSON.stringify(json);
-    console.log(jsonContent);
-
     fs.writeFile(
         path.join(dataRoot, 'data.json'),
         jsonContent,
