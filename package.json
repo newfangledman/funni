@@ -20,13 +20,16 @@
     },
     "homepage": "https://github.com/newfangledman/funni#readme",
     "devDependencies": {
+        "@babel/core": "^7.7.7",
+        "@babel/plugin-transform-runtime": "^7.7.6",
         "@babel/preset-env": "^7.7.7",
         "babel-loader": "^8.0.6",
         "webpack": "^4.41.5",
-        "webpack-cli": "^3.3.10",
-        "@babel/core": "^7.7.7"
+        "webpack-cli": "^3.3.10"
     },
     "dependencies": {
-        "leaflet": "^1.6.0"
+        "@babel/runtime": "^7.7.7",
+        "leaflet": "^1.6.0",
+        "leaflet-geosearch": "^2.7.0"
     }
 }
