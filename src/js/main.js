@@ -1,6 +1,6 @@
 import L from 'leaflet';
-
-var planes = [
+import planes from '@utils/process';
+var cur = [
     ['7C6B07', -40.99497, 174.50808],
     ['7C6B38', -41.30269, 173.63696],
     ['7C6CA1', -41.49413, 173.5421],

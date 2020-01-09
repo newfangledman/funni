@@ -15,7 +15,7 @@ function csvToJSON(csv) {
         obj['id'] = pos + 1;
         const currentline = line.split(',');
         headers.forEach(function(header, i) {
-            obj[header] = currentline[i];
+            obj[String.toLowerCase(header)] = currentline[i];
         });
         result.places.push(obj);
     });
