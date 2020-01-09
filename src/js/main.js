@@ -4,8 +4,8 @@ import planes from '@utils/process';
 const mapHandle = document.getElementById('map');
 const loading = document.createElement('img');
 loading.setAttribute('src', 'public/assets/loading.gif');
-loading.setAttribute('height', '400');
-loading.setAttribute('width', '600');
+loading.setAttribute('height', '600');
+loading.setAttribute('width', '800');
 mapHandle.appendChild(loading);
 planes.then(markers => {
     const NORTHERN_IRELAND = [54.607868, -7.0];

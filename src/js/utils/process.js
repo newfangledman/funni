@@ -10,7 +10,8 @@ export async function createPlanesFromJson({ places }) {
         if (results.length) {
             const { x, y } = results[0];
             const popup = `<a href=${website}>${name}</a>
-                            <b>Price pp: £${price_range}</b> `;
+                           <br/>
+                           <b>Price pp: £${price_range}</b> `;
             planes.push({ coords: [id, Number(y), Number(x)], popup });
         }
     }
