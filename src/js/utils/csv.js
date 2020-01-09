@@ -15,7 +15,13 @@ function csvToJSON(csv) {
         obj['id'] = pos + 1;
         const currentline = line.split(',');
         headers.forEach(function(header, i) {
-            obj[header.toLowerCase()] = currentline[i];
+            obj[
+                header
+                    .toLowerCase()
+                    .replace(/£/g, '')
+                    .trim()
+                    .replace(/ /g, '_')
+            ] = currentline[i];
         });
         result.places.push(obj);
     });

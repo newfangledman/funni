@@ -3,13 +3,15 @@ import { OpenStreetMapProvider } from 'leaflet-geosearch';
 export async function createPlanesFromJson({ places }) {
     const provider = new OpenStreetMapProvider();
     const planes = [];
-    for (let place of places) {
+    for (let { id, name, county, website, price_range } of places) {
         const results = await provider.search({
-            query: `${place.name} Co.${place.county}`,
+            query: `${name} Co.${county}`,
         });
         if (results.length) {
             const { x, y } = results[0];
-            planes.push([place.id, Number(y), Number(x)]);
+            const popup = `<a href=${website}>${name}</a>
+                            <b>Price pp: £${price_range}</b> `;
+            planes.push({ coords: [id, Number(y), Number(x)], popup });
         }
     }
     return planes;
