@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const dataRoot = path.join(__dirname, '../../../data/');
+const dataRoot = path.join(__dirname, '@data');
 const inputPath = path.join(dataRoot, 'dataset.csv');
 
 function csvToJSON(csv) {

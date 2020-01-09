@@ -11,8 +11,9 @@ var planes = [
     ['C820AB', -42.08414, 173.96632],
     ['C820B6', -41.51285, 173.53274],
 ];
+const NORTHERN_IRELAND = [54.607868, -7.0];
 
-const map = L.map('map').setView([54.607868, -7.0], 8);
+const map = L.map('map').setView(NORTHERN_IRELAND, 8);
 const mapLink = '<a href="http://openstreetmap.org">OpenStreetMap</a>';
 L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; ' + mapLink + ' Contributors',
