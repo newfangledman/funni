@@ -8,9 +8,9 @@ loading.setAttribute('src', 'public/assets/loading.gif');
 loading.setAttribute('height', '600');
 loading.setAttribute('width', '800');
 mapHandle.appendChild(loading);
+
 planes.then(markers => {
     mapHandle.removeChild(loading);
-
     const map = L.map('map').setView(NORTHERN_IRELAND, 8);
     const mapLink = '<a href="http://openstreetmap.org">OpenStreetMap</a>';
     L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
