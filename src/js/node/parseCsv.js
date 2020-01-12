@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const dataRoot = path.join(__dirname, '../../../data');
 const inputPath = path.join(dataRoot, 'dataset.csv');
+const geoSearchAndAddToJson = require('./geoSearch.js');
 
 function csvToJSON(csv) {
     const lines = csv.split('\n');
@@ -53,7 +54,7 @@ async function loadCsvFile(path) {
 
 async function processCsv(path) {
     const fileData = await loadCsvFile(path);
-    writeJSON(csvToJSON(fileData));
+    writeJSON(geoSearchAndAddToJson(csvToJSON(fileData)));
 }
 
 processCsv(inputPath);

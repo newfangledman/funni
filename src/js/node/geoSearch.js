@@ -1,16 +1,14 @@
-import data from '@data/data.json';
-import { EsriProvider } from 'leaflet-geosearch';
-
-const provider = new EsriProvider();
-async function createPlanesFromJson({ places }, key) {
-    const provider = new EsriProvider();
+const leafletGeo = require('leaflet-geosearch');
+const { OpenStreetMapProvider } = leafletGeo;
+async function geoSearchAndAddToJson({ places }) {
+    const provider = new OpenStreetMapProvider();
+    console.log(provider);
+    console.log(places);
     const planes = [];
     for (let { id, name, location, county, website, price_range } of places) {
-        const address = `${name} ${location} Co.${county}`;
         const results = await provider.search({
-            query: address,
+            query: `${name} ${location} Co.${county}`,
         });
-        console.log(address, results);
         if (results.length) {
             const { x, y } = results[0];
             const popup = `<a href=${website}>${name}</a>
@@ -22,6 +20,4 @@ async function createPlanesFromJson({ places }, key) {
     return planes;
 }
 
-const key = process.env.GOOGLE_MAPS_API_KEY;
-
-export default createPlanesFromJson(data, key);
+module.exports = geoSearchAndAddToJson;
